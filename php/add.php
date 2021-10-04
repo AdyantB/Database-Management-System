@@ -15,7 +15,7 @@
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
 		$stmt = $conn->prepare("INSERT INTO `candidate`(`Unique_Health_ID`, `Name`, `Date_of_Birth`, `Age`, `Gender`, `Beneficiary_Reference_ID`, `Vaccine_Name` , `Dose_Type`) VALUES (?,?,?,?,?,?,?,?)");
-		$stmt->bind_param("sssiiiss", $Unique_Health_ID, $Name, $Date_of_Birth, $Age, $Gender, $Beneficiary_Reference_ID, $Vaccine_Name, $Dose_Type);
+		$stmt->bind_param("sssisiss", $Unique_Health_ID, $Name, $Date_of_Birth, $Age, $Gender, $Beneficiary_Reference_ID, $Vaccine_Name, $Dose_Type);
 		$execval = $stmt->execute();
 		echo $execval;
 		echo "Added successfully...";
