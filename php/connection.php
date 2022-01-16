@@ -1,21 +1,14 @@
 <?php
-	$host = "localhost";
-	$username = "root";
-	$password = "";
-	$database = "covid_19_vaccination_db";
 
-	$conn = mysqli_connect($host, $username, $password, $database);
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "covid_19_vaccination_db";
 
-	if (!$conn) {
-	    die("Connection failed: " . mysqli_error());
-	} 
-?>
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-	<script>
-	    alert('Connection succesful')
-	</script>
-
-<?php
-	echo "Connected successfully";
+if(!$conn){
+	die("Could not connect to the database due to the following error --> ".mysqli_connect_error());
+}
 
 ?>
